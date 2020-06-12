@@ -13,7 +13,7 @@ class ArticleController extends Controller {
     this.ctx.body = await this.ctx.service.article.remove(this.ctx.query._id);
   }
   async findOne() {
-    console.log(this.ctx.params);
+    // console.log(this.ctx.params);
     this.ctx.body = await this.ctx.service.article.findById(this.ctx.params._id);
   }
   async findById() {

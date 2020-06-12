@@ -58,7 +58,13 @@ class ArticleService extends Service {
     try {
       // let skip = body.skip
       // delete body.skip
+      // {"name": {$regex: '测试', $options:'i'}}
+      if (body.articleTitle) {
+        const title = body.articleTitle;
+        body.articleTitle = { $regex: title, $options: 'i' };
+      }
       const result = await this.ctx.model.Article.find(body);
+      // console.log('查询条件body:' + JSON.stringify(body) + '结果:' + result);
       return { massage: '', success: true, result };
     } catch (error) {
       this.logger.error(error);
