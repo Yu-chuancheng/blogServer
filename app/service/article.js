@@ -64,8 +64,10 @@ class ArticleService extends Service {
         body.articleTitle = { $regex: title, $options: 'i' };
       }
       const result = await this.ctx.model.Article.find(body);
+      const total = await this.ctx.model.Article.count(body);
+      console.log(total);
       // console.log('查询条件body:' + JSON.stringify(body) + '结果:' + result);
-      return { massage: '', success: true, result };
+      return { massage: '', success: true, result, total };
     } catch (error) {
       this.logger.error(error);
       return { success: false, error };
