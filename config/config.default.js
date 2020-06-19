@@ -38,8 +38,8 @@ module.exports = appInfo => {
     formLimit: '50mb',
   };
   config.mongoose = {
-    url: 'mongodb+srv://ycc:19971011ycc@cluster0-zak08.mongodb.net/blog?retryWrites=true&w=majority',
-    // url: 'mongodb://localhost:27017/blogApi',
+    // url: 'mongodb+srv://ycc:19971011ycc@cluster0-zak08.mongodb.net/blog?retryWrites=true&w=majority',
+    url: 'mongodb://localhost:27017/blogApi',
     options: {
       useCreateIndex: true,
       useUnifiedTopology: true,
